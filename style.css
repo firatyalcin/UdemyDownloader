@@ -1,0 +1,36 @@
+body{
+    margin: 24px;
+    background-color: #29303b;
+    color: #FFF;
+}
+
+.container{
+    min-width: 250px;
+}
+.title, .duration{
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+}
+
+.dl-container{
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+#download{
+    background-color: #FFFFFF;
+    color: #29303b;
+    padding: 6px 16px;
+    border-radius: 16px;
+    border: none;
+    outline: none;
+}
+#download:focus{
+    border: none;
+    outline: none;
+}
+
+.h{
+    display: none;
+}
