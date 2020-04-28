@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
           function(result){
               if (typeof(result) != 'undefined' || result != null){
                   if (typeof(result[0]) != 'undefined' && result[0] != null){
+                      const a = document.querySelector('a');
                       document.querySelectorAll('.h').forEach(element => element.classList.remove('h'));
                       document.querySelector('.error').classList.add('h');
 
                       //Getting video's title
                       chrome.tabs.executeScript(null, { code: 'document.querySelector("[aria-current=\'true\'] .item-link").getAttribute("aria-label")' },
                           function(result){
+                              a.download = result;
                               document.querySelector(".title").innerHTML = result;
                           });
 
@@ -21,11 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
                           });
 
                       //Downloading the video
-                      document.querySelector('#download').addEventListener('click', function() {
-                          chrome.tabs.executeScript({
-                              code: 'window.open(document.querySelector(".vjs-tech").src, "_blank")'
+                      chrome.tabs.executeScript(null, { code: 'document.querySelector(".vjs-tech").src' },
+                          function (result) {
+                              a.href = result;
                           });
-                      });
                   }
               }
           });

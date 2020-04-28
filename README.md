@@ -1,6 +1,6 @@
 # How it works?
 
-Click the extension icon when you watching a Udemy course video the extension will get that video's url and open it in new tab then download will start.
+Click the extension icon when you watching a Udemy course video the extension will get that video's url and when you click the download button download will start immediately. Don't forget to choose video quality before downloading.
 
 
 # Installation
